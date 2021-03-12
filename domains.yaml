@@ -1,4 +1,4 @@
-# Enter domains/keywords to monitor (Only Root domains)
+# Currently Monitoring 
 domains:
       - .hackerone.com
       - bugcrowd

@@ -6,6 +6,7 @@ import yaml
 import time
 import requests
 import json
+from core import telegram_bot
 
 
 # certstream websocket URL 
@@ -63,6 +64,8 @@ def parse_results(all_domains_found):
        
         for t in unique_subdomains:
             print("\u001b[32m[MATCH]\u001b[0m : " + t )
+            #send telegram notification
+            telegram_bot.send_data(t)
             with open(found_domains_path, 'a') as f:
                     f.write(time.strftime("%Y-%m-%d") + " {}\n".format(t))
 
